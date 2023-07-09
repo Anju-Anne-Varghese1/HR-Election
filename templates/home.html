@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}} ">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+
+    <title>B1T5 Project</title>
+   
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="#home">DSA B1T5</a></li>
+        
+      </ul>
+    <div class="container">
+      <div class="image">
+        <img class="image1" src= "{{url_for('static',filename='images/bg3.jpg' )}}" width='100%' height="400">
+        <div class="centered">
+          <h1 id="myHeader1" > DSA Batch1 Team5 Project</h1>
+          
+          <h3 id="myHeader2" style="color:rgb(155, 30, 30) ;font-size:200%;font-family:Times New Roman, Times, serif;">US House of Representatives Election</h3>
+          </div> 
+       <img class="image2" src= "{{url_for('static',filename='images/bg7.png' )}}" width="20%" height='20%'>
+      </div> 
+        <!--<img src="{{url_for('static',filename='images/bg3.jpg')}}" width='100%' height="400">-->
+      
+        
+      
+    </div>
+    <div id="bg">
+      <pre>
+
+      </pre> 
+   <h2>INTRODUCTION</h2> 
+<pre>
+
+</pre>
+<p align="justify">The House of Representatives is made up of 435 elected members, divided among the 50 states in proportion to their total population. In addition, there are 6 non-voting members, representing the District of Columbia, the Commonwealth of Puerto Rico, and four other territories of the United States: American Samoa, Guam, the U.S. Virgin Islands, and the Commonwealth of Northern Mariana Islands.
+Members of the House are elected every two years. Congressional elections determine who represents the state in the U.S. House of Representatives. They also decide which political party will hold a majority in each chamber of Congress for the next two years. 
+Since these midterm elections are important for the future of the country, the model was created to predict the election results of the year 2024 using data from both 1976 to 2020, 2022  elections, and 2024.</p>
+<pre>
+
+  
+</pre>
+<h2>DATA</h2>
+
+<pre>
+
+</pre>
+<p align="justify">The data regarding the house of representatives were taken from Harvard Dataverse
+  maintained by the MIT Election Data and Science Lab. The data had 31103 rows and 19 
+  columns. The column included the year of the election, state, district, party, number of votes of 
+  the candidates, total votes received during the election, etc.</p>
+<pre>
+
+
+</pre>
+<h2>EDA</h2>
+<pre>
+
+</pre>
+<h4><i><u>Year-wise total votes </u></i></h4>
+<p align="justify">The total number of eligible voters who participated in all the elections from the year 1978 to 2020 is shown in the figure below. The graph is following a zig-zag trend, where the highest number of eligible voters was found for the year 2020 and the lowest number of eligible voters was found for the year 1978.</p>
+
+<img src="{{url_for('static', filename='images/img1.jpg')}}" alt="Year-wise total votes" width="500" height="333" align="middle" />
+<pre>   
+
+
+
+
+</pre>
+<h4><i><u>Year-wise plotting of the total number of candidates participation </u></i></h4>
+<p align="justify">The total number of candidates who participated in the elections for the US House of Representatives from the year 1978 to 2020 is shown in figure 2 below. The highest number of candidates was found for the year 1996 since the primary election was there for the year 1996. The lowest number of candidates was found for the year 1986. </p>
+
+
+
+<img src="{{url_for('static', filename='images/img2.jpg')}}" alt="Year-wise number of candidates participation" width="500" height="333" align="middle" />
+<pre>
+
+
+
+</pre>
+<h2>MODEL</h2>
+<pre>
+
+</pre>
+<p>The following classification models were constructed:
+    <p>1)	LOGISTIC REGRESSION MODEL</p>
+    <p>2)	DECISION TREE MODEL</p>
+    <p> 3)	RANDOM FOREST MODEL</p>
+</p>
+    <pre>
+
+    </pre>
+   <h4><u> DECISION TREE MODEL</u></h4>
+   <pre>
+
+   </pre>
+    <p align="justify">The model was tuned to get the optimum hyperparameters. The model achieved 91.16 %
+     accuracy on the training set (election results of 1978-2020) and 88.28 % accuracy on the 
+    validation set (election results of 2022).</p>
+    <pre>
+
+
+    </pre>
+    <p>After creating the model, important features of the model were examined.</p>
+    <pre>
+
+    </pre>
+    <img src="{{url_for('static', filename='images/img3.jpg')}}" alt="important features" width="300" height="200" align="middle" />
+    <pre>
+
+
+
+    </pre>
+<h2>CONCLUSION</h2>
+<pre>
+
+</pre>
+<p align="justify"> We chose Decision tree as the final model for predicting the election results for the
+    year 2024. The model had 91.16 % accuracy on the training set (election results of 1978-2020) and 88.28 % accuracy on the validation set (election results of 2022). Out of the 435 house seats, the model correctly predicted 384 of them, with many of the wrong predictions coming from  California, and Florida.
+    California, and  Florida have 15 and 6 districts incorrectly predicted, with these two states alone making up nearly 41% of the wrong predictions. Confusion 
+    matrix is indicated below where 'R' indicates the republican party and 'O' indicates 
+    other parties including democrats.
+    </p>
+    <pre>
+      
+    </pre>
+    <img src="{{url_for('static', filename='images/img4.jpg')}}" alt="confusion matrix" width="300" height="200" align="middle" />
+    <pre>
+      
+    </pre>
+<p align="justify"> From the confusion matrix, we can see that the majority of the wrong predictions are when the model predicted that other parties would win when a republican party actually won.</p>
+<pre>
+
+</pre>
+<h4>Table: Predicted election results for the year 2024</h4>
+<div>
+<table class="center">
+  <tr>
+    <th style="text-align: center" rowspan='2'>Year</th>
+    
+    <th style="text-align: center" colspan='2'>Party</th> 
+    
+    <tr>
+    
+    <th>Republican</th>
+    <th>Others</th>
+    </tr>
+    
+  </tr>
+  
+  <tr>
+    <td> Predicted 2024 election results</td>
+    <td>222</td>
+    <td>213</td>
+  </tr>
+  
+ 
+</table>
+</div>
+</div>
+<p></p>
+<p></p>
+<p>--------------</p>
+<ul>
+  <li><a class="active" href="#home"></a></li>
+  
+</ul>
+
+</body>
+</html>
